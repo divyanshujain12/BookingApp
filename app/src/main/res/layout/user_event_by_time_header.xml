@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/ten_dp"
+    android:orientation="vertical">
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtDayOfMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/fourteen_sp"
+        pixlui:typeface="Roboto-Medium.ttf" />
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music"
+        android:textColor="@color/white_with_alpha"
+        android:textSize="@dimen/twelve_sp"
+        pixlui:typeface="Roboto-Medium.ttf" />
+</LinearLayout>

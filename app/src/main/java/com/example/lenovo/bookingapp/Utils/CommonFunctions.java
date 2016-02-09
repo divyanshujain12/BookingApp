@@ -3,14 +3,20 @@ package com.example.lenovo.bookingapp.Utils;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
-
+import com.example.lenovo.bookingapp.Models.EventsModel;
 import com.example.lenovo.bookingapp.R;
 import com.neopixl.pixlui.components.edittext.EditText;
 
@@ -20,6 +26,7 @@ import com.neopixl.pixlui.components.edittext.EditText;
 public class CommonFunctions {
     private Context context;
     private static Snackbar snackbar = null;
+    public static PopupWindow popupWindow = null;
 
     public CommonFunctions(Context context) {
         this.context = context;
@@ -60,6 +67,7 @@ public class CommonFunctions {
 
         return true;
     }
+
     public boolean validateCity(EditText inputName, TextInputLayout inputLayoutName) {
         if (inputName.getText().toString().trim().isEmpty()) {
             inputLayoutName.setError(((Activity) context).getString(R.string.err_msg_name));
@@ -97,7 +105,8 @@ public class CommonFunctions {
 
         return true;
     }
-    public boolean compareOldPassword(EditText inputPassword, TextInputLayout inputLayoutPassword,String oldPass) {
+
+    public boolean compareOldPassword(EditText inputPassword, TextInputLayout inputLayoutPassword, String oldPass) {
         if (!inputPassword.getText().toString().trim().contentEquals(oldPass)) {
             inputLayoutPassword.setError(((Activity) context).getString(R.string.err_wrong_pass));
             requestFocus(inputPassword);
@@ -158,5 +167,53 @@ public class CommonFunctions {
         snackbar.show();
     }
 
+    public static void showEventDescriptionPopup(EventsModel eventsModel, Context context, View locationView) {
+
+        View view = LayoutInflater.from(context).inflate(R.layout.event_detail, null);
+        popupWindow = new PopupWindow(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT);
+        popupWindow.setContentView(view);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(context.getResources().getColor(R.color.background_dark)));
+        popupWindow.setAnimationStyle(R.style.DialogAnimation1);
+
+        ImageView PartyImage = (ImageView) view.findViewById(R.id.PartyImage);
+        com.neopixl.pixlui.components.textview.TextView txtEventType = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtEventType);
+        com.neopixl.pixlui.components.textview.TextView txtShortDescription = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtShortDescription);
+
+        com.neopixl.pixlui.components.textview.TextView txtDate = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtDate);
+        com.neopixl.pixlui.components.textview.TextView txtTime = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtTime);
+        com.neopixl.pixlui.components.textview.TextView txtDay = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtDay);
+
+        com.neopixl.pixlui.components.textview.TextView txtApprox = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtApprox);
+        com.neopixl.pixlui.components.textview.TextView txtRanking = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtRanking);
+        com.neopixl.pixlui.components.textview.TextView txtDescription = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtDescription);
+        com.neopixl.pixlui.components.textview.TextView txtDistance = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtDistance);
+        com.neopixl.pixlui.components.textview.TextView txtAddress = (com.neopixl.pixlui.components.textview.TextView) view.findViewById(R.id.txtAddress);
+
+        LinearLayout correctLL = (LinearLayout) view.findViewById(R.id.correctLL);
+
+
+        txtEventType.setText(eventsModel.getCategory());
+        txtShortDescription.setText(eventsModel.getTitle());
+        txtDate.setText(eventsModel.getEdate());
+        txtTime.setText(eventsModel.getEtime());
+        txtDay.setText(eventsModel.getEday());
+        txtRanking.setText(eventsModel.getCurrentrsvp());
+        txtAddress.setText(eventsModel.getAddress());
+        txtDescription.setText(eventsModel.getDescp());
+
+        ImageView imgClose = (ImageView) view.findViewById(R.id.imgClose);
+
+        imgClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+                popupWindow = null;
+            }
+        });
+
+        popupWindow.showAtLocation(locationView, Gravity.TOP, 0, 0);
+
+    }
 
 }

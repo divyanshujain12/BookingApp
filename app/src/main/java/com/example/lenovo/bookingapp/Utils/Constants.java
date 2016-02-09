@@ -32,24 +32,33 @@ public class Constants {
     public static String TOPIC_ID = "topicid";
     public static String TYPE = "type";
     public static String PAGE_NO = "pageno";
+    public static String EVENTS = "events";
+    public static String SUCCESS = "success";
     public static String PAGE_SIZE = "pagesize";
 
     public interface webServiceSendKeys {
         public static String EMAIL_ID = "EmailID";
         public static String SUB_CATEGORY_ID = "subcategory_id";
+
     }
 
     public interface WebServices {
 
         //public static String BASE = "http://whatsupguys.in/demo/trust1_api/api/";
 
-        public static String BASE = "http://www.trustoneapp.com/api/api/";
+        public static String BASE = "http://119.9.108.137/bookingapp/";
 
         public static String SIGN_UP = BASE + "registration";
 
         public static String LOG_IN = BASE + "login";
 
         public static String HOME = BASE + "home";
+
+        public static String EVENTS = BASE + "events.php";
+
+        public static String USER_EVENTS_BY_TIME = BASE+"userevents.php?accesstoken=8dd9294632aeed1b62a6bc2eba8b41c5";
+
+        public static String USER_EVENT_BY_POPULARITY = BASE+"eventsbypopularity.php";
 
     }
 }

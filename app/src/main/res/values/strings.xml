@@ -8,4 +8,5 @@
     <string name="err_msg_password">Enter the password</string>
     <string name="err_msg_number">Enter the valid Number</string>
     <string name="err_wrong_pass">You have entered wrong old password!</string>
+    <string name="event_confirm">Your event has been saved to your profile</string>
 </resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_with_purple_shadow"
+    android:gravity="center|center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/ten_dp">
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtEventType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_music_drawable"
+        android:paddingBottom="@dimen/five_dp"
+        android:paddingLeft="@dimen/twenty_five_dp"
+        android:paddingRight="@dimen/twenty_five_dp"
+        android:paddingTop="@dimen/five_dp"
+        android:text="Music"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/twelve_dp"
+        pixlui:typeface="Roboto-Bold.ttf" />
+
+    <com.example.lenovo.bookingapp.Utils.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/roundedPartyImage"
+        android:layout_width="@dimen/one_hundred_fifty_five_dp"
+        android:layout_height="@dimen/one_hundred_fifty_five_dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/demo"
+        app:riv_corner_radius="30dip"
+        app:riv_oval="true" />
+
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:gravity="center"
+        android:padding="@dimen/ten_dp"
+        android:text="TIME"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/twenty_sp"
+        pixlui:typeface="Roboto-Bold.ttf" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:padding="@dimen/ten_dp">
+
+        <LinearLayout
+            android:id="@+id/dateLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="DATE"
+                android:textColor="@color/white_with_alpha"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:text="Music"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/five_dp"
+                android:text="Music"
+                android:textColor="@color/white_with_alpha"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_toRightOf="@+id/dateLL"
+            android:orientation="vertical">
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="TIME"
+                android:textColor="@color/white_with_alpha"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:text="Music"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtApprox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/five_dp"
+                android:text="Music"
+                android:textColor="@color/white_with_alpha"
+                android:textSize="@dimen/twelve_dp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+        </LinearLayout>
+
+        <com.neopixl.pixlui.components.textview.TextView
+            android:id="@+id/txtRanking"
+            android:layout_width="@dimen/sixty_dp"
+            android:layout_height="@dimen/sixty_dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/five_dp"
+            android:background="@drawable/yellow_circle"
+            android:gravity="center"
+            android:padding="@dimen/fifteen_dp"
+            android:text="19"
+            android:textColor="@color/background_dark"
+            android:textSize="@dimen/thirteen_sp"
+            pixlui:typeface="Roboto-Medium.ttf" />
+    </RelativeLayout>
+</LinearLayout>

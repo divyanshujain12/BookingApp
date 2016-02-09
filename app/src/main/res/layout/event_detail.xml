@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/ten_dp"
+        android:layout_weight="8.5"
+        android:background="@drawable/background_with_purple_shadow"
+        android:orientation="vertical"
+
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/PartyImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/demo"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/imgClose"
+                android:layout_width="@dimen/thirty_dp"
+                android:layout_height="@dimen/thirty_dp"
+                android:layout_margin="@dimen/five_dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+            
+            <ImageView
+                android:layout_width="@dimen/thirty_dp"
+                android:layout_height="@dimen/thirty_dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/five_dp"
+                android:src="@android:drawable/ic_menu_share"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#44000000"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtEventType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rounded_music_drawable"
+                    android:paddingBottom="@dimen/seven_dp"
+                    android:paddingLeft="@dimen/twenty_five_dp"
+                    android:paddingRight="@dimen/twenty_five_dp"
+                    android:paddingTop="@dimen/seven_dp"
+                    android:text="Music"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/twelve_dp"
+                    pixlui:typeface="Roboto-Bold.ttf" />
+
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtShortDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:padding="@dimen/ten_dp"
+                    android:text="TIME"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/twenty_sp"
+                    pixlui:typeface="Roboto-Bold.ttf" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:padding="@dimen/fifteen_dp">
+
+            <LinearLayout
+                android:id="@+id/dateLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="DATE"
+                    android:textColor="@color/white_with_alpha"
+                    android:textSize="@dimen/fourteen_sp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="Music"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:text="Music"
+                    android:textColor="@color/white_with_alpha"
+                    android:textSize="@dimen/twelve_dp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_toRightOf="@+id/dateLL"
+                android:orientation="vertical">
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="TIME"
+                    android:textColor="@color/white_with_alpha"
+                    android:textSize="@dimen/fourteen_sp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="Music"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtApprox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:text="Music"
+                    android:textColor="@color/white_with_alpha"
+                    android:textSize="@dimen/twelve_dp"
+                    pixlui:typeface="Roboto-Medium.ttf" />
+
+            </LinearLayout>
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/five_dp"
+                android:background="@drawable/yellow_circle"
+                android:padding="@dimen/twenty_dp"
+                android:text="19"
+                android:textColor="@color/background_dark"
+                android:textSize="@dimen/fifteen_sp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:layout_below="@+id/txtRanking"
+                >
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:text="DETAILS"
+                    android:textColor="@color/white_with_alpha"
+                    android:textSize="@dimen/fifteen_sp"
+                    pixlui:typeface="Roboto-Bold.ttf" />
+
+
+                <com.neopixl.pixlui.components.textview.TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:text="TIME"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/fifteen_sp"
+                    pixlui:typeface="Roboto-Bold.ttf" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:layout_gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_hundred_dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/map_demo"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#aa453B72"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.neopixl.pixlui.components.textview.TextView
+                        android:id="@+id/txtDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/five_dp"
+                        android:text="DETAILS"
+                        android:textColor="@color/white_with_alpha"
+                        android:textSize="@dimen/twelve_dp"
+                        pixlui:typeface="Roboto-Medium.ttf" />
+
+                    <com.neopixl.pixlui.components.textview.TextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/five_dp"
+                        android:text="DETAILS"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/sixteen_sp"
+                        pixlui:typeface="Roboto-Medium.ttf" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginLeft="@dimen/ten_dp"
+        android:layout_marginRight="@dimen/ten_dp"
+        android:layout_marginBottom="@dimen/ten_dp"
+        android:background="@drawable/green_rounded_corner"
+        android:id="@+id/correctLL"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgCorrect"
+            android:layout_width="@dimen/fourty_five_dp"
+            android:layout_height="@dimen/fourty_five_dp"
+            android:background="@drawable/faded_circle"
+            android:padding="@dimen/fifteen_dp"
+            android:src="@drawable/correct" />
+    </LinearLayout>
+</LinearLayout>

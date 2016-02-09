@@ -2,13 +2,11 @@ package com.example.lenovo.bookingapp.Utils;
 
 import android.content.Context;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.lenovo.bookingapp.MyApplication;
 import com.example.lenovo.bookingapp.R;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,9 +25,9 @@ public class CallWebService {
     private static CustomProgressDialog progressDialog = null;
 
 
-    public static CallWebService getInstance(Context context) {
+    public static CallWebService getInstance(Context context,boolean showProgressBar) {
         instance.context = context;
-        if (context != null)
+        if (context != null&& showProgressBar)
             progressDialog = new CustomProgressDialog(context, R.drawable.syc);
         else
             progressDialog = null;
@@ -40,16 +38,17 @@ public class CallWebService {
         return instance;
     }
 
-    public void hitJSONObjectVolleyWebService(String url, HashMap<String, String> json, final CallBackInterface callBackinerface) {
+    public void hitJSONObjectVolleyWebService(int requestType, String url, HashMap<String, String> json, final CallBackInterface callBackinerface) {
         if (progressDialog != null)
             progressDialog.show();
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(json), new Response.Listener<JSONObject>() {
+        JsonObjectRequest request = new JsonObjectRequest(requestType, url,json == null ? null: (new JSONObject(json)), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
+                if (progressDialog != null)
+                    progressDialog.dismiss();
                 try {
-                    if (response.getBoolean(Constants.STATUS_CODE))
+                    if (response.getString(Constants.SUCCESS).equals("1"))
                         callBackinerface.onJsonObjectSuccess(response);
                     else
                         callBackinerface.onFailure(response.optString(Constants.MESSAGE));
@@ -58,8 +57,7 @@ public class CallWebService {
                     e.printStackTrace();
                 }
 
-                if (progressDialog != null)
-                    progressDialog.dismiss();
+
             }
         }, new Response.ErrorListener() {
             @Override

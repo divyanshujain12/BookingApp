@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.example.lenovo.bookingapp.Utils.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/roundedPartyImage"
+                android:layout_width="@dimen/one_hundred_dp"
+                android:layout_height="@dimen/one_hundred_dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/demo"
+                app:riv_corner_radius="30dip"
+                app:riv_oval="true" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/five_dp"
+                android:text="Danny Saltaren"
+                android:textColor="@color/background_dark"
+                android:textSize="@dimen/twenty_sp"
+                pixlui:typeface="Roboto-Bold.ttf" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtAttendingEventsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/five_dp"
+                android:text="Danny Saltaren"
+                android:textColor="@color/purple_light_with_alpha"
+                android:textSize="@dimen/fourteen_sp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+
+            <LinearLayout
+                android:id="@+id/attendingPeopleLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:orientation="vertical" />
+
+            <com.neopixl.pixlui.components.textview.TextView
+                android:id="@+id/txtAttendingPeopleCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/five_dp"
+                android:text="Danny Saltaren"
+                android:textColor="@color/background_dark"
+                android:textSize="@dimen/fourteen_sp"
+                pixlui:typeface="Roboto-Medium.ttf" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/fifteen_dp"
+        android:paddingRight="@dimen/fifteen_dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+          />
+
+    </LinearLayout>
+</LinearLayout>
